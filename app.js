@@ -16,6 +16,26 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // Flow Effects: Scroll Reveal Observer
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                // Optional: Stop observing once revealed
+                // observer.unobserve(entry.target); 
+            }
+        });
+    }, observerOptions);
+
+    // We will attach this to elements after rendering is complete in renderPortfolio
+    window.revealObserver = observer;
 });
 
 function renderPortfolio(data) {
@@ -29,16 +49,29 @@ function renderPortfolio(data) {
             if (sectionName === 'Research Publications') {
                 sectionHTML = createPublicationGrid(sectionName, data[sectionName]);
             } else if (sectionName === 'About Me') {
-                sectionHTML = createAboutSection(sectionName, data[sectionName], data['Skills']);
+                sectionHTML = createAboutSection(sectionName, data[sectionName], data['Skills'], data['CitationStats']);
+            } else if (sectionName === 'Experience' || sectionName === 'Education') {
+                sectionHTML = createTimelineSection(sectionName, data[sectionName]);
             } else {
                 sectionHTML = createSection(sectionName, data[sectionName]);
             }
-            container.appendChild(sectionHTML);
+
+            // Add reveal class and append
+            if (sectionHTML) {
+                sectionHTML.classList.add('reveal');
+                container.appendChild(sectionHTML);
+            }
         }
     });
+
+    // Attach Observer to all reveal elements (sections and cards)
+    const revealElements = document.querySelectorAll('.reveal');
+    if (window.revealObserver) {
+        revealElements.forEach(el => window.revealObserver.observe(el));
+    }
 }
 
-function createAboutSection(title, data, skillsData) {
+function createAboutSection(title, data, skillsData, citationStats) {
     const section = document.createElement('section');
     section.id = title.replace(/\s+/g, '');
     section.className = 'content-section about-section';
@@ -57,6 +90,13 @@ function createAboutSection(title, data, skillsData) {
     img.className = 'about-image';
     contentDiv.appendChild(img);
 
+    // Wrapper for Text + Chart (Right Column)
+    const detailsWrapper = document.createElement('div');
+    detailsWrapper.className = 'about-details-wrapper';
+    detailsWrapper.style.flex = '1'; /* Take remaining space */
+    detailsWrapper.style.display = 'flex';
+    detailsWrapper.style.flexDirection = 'column';
+
     // Text
     const textDiv = document.createElement('div');
     textDiv.className = 'about-text';
@@ -67,8 +107,94 @@ function createAboutSection(title, data, skillsData) {
             textDiv.appendChild(p);
         });
     }
-    contentDiv.appendChild(textDiv);
+    detailsWrapper.appendChild(textDiv);
 
+    // Citation Chart (Small Card)
+    if (citationStats) {
+        const chartCard = document.createElement('div');
+        chartCard.className = 'citation-card reveal';
+        chartCard.innerHTML = `
+            <div class="citation-header">
+                <div class="citation-metrics">
+                    <div class="metric">
+                        <span class="metric-val">${citationStats.totalCitations}</span>
+                        <span class="metric-label">Citations</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-val">${citationStats.hIndex}</span>
+                        <span class="metric-label">h-index</span>
+                    </div>
+                </div>
+            </div>
+            <div class="citation-graph">
+                <canvas id="citationChartSmall"></canvas>
+            </div>
+        `;
+        // Append to wrapper
+        detailsWrapper.appendChild(chartCard);
+
+        setTimeout(() => {
+            const ctx = document.getElementById('citationChartSmall').getContext('2d');
+            const years = Object.keys(citationStats.citationsPerYear);
+            const counts = Object.values(citationStats.citationsPerYear);
+
+            const maxVal = Math.max(...counts);
+            const stepSize = Math.ceil(maxVal / 5);
+            const maxY = stepSize * 5;
+
+            new Chart(ctx, {
+                type: 'bar', // Bar chart for per-year clarity
+                data: {
+                    labels: years,
+                    datasets: [{
+                        label: 'Citations',
+                        data: counts,
+                        backgroundColor: 'rgba(0, 243, 255, 0.6)',
+                        borderColor: 'rgba(0, 243, 255, 1)',
+                        borderWidth: 1,
+                        borderRadius: 4,
+                        barPercentage: 0.6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            enabled: true,
+                            backgroundColor: 'rgba(0,0,0,0.8)',
+                            titleColor: '#fff',
+                            bodyColor: '#fff'
+                        }
+                    },
+                    scales: {
+
+                        y: {
+                            display: true, // Show Y axis values
+                            beginAtZero: true,
+                            max: maxY, // Force scaling
+                            grid: { color: 'rgba(255, 255, 255, 0.05)' },
+                            ticks: {
+                                color: 'rgba(255, 255, 255, 0.6)',
+                                font: { size: 10 },
+                                stepSize: stepSize,
+                                autoSkip: false // Force all ticks
+                            }
+                        },
+                        x: {
+                            display: true, // Show Years
+                            grid: { display: false },
+                            ticks: { color: 'rgba(255, 255, 255, 0.9)', font: { size: 11 } }
+                        }
+                    }
+                }
+            })
+
+        }, 100)
+    }
+
+    contentDiv.appendChild(detailsWrapper);
     section.appendChild(contentDiv);
 
     // Skills Injection
@@ -158,6 +284,98 @@ function createAboutSection(title, data, skillsData) {
 
 
 
+function createTimelineSection(title, data) {
+    const section = document.createElement('section');
+    section.id = title.replace(/\s+/g, '');
+    section.className = `content-section ${title.toLowerCase()}-section`;
+
+    const h2 = document.createElement('h2');
+    h2.className = 'section-header';
+    h2.textContent = title;
+    section.appendChild(h2);
+
+    const container = document.createElement('div');
+    container.className = 'timeline-container';
+
+    data.forEach(item => {
+        const itemDiv = document.createElement('div');
+        itemDiv.className = 'timeline-item';
+
+        // Dot
+        const dot = document.createElement('div');
+        dot.className = 'timeline-dot';
+        itemDiv.appendChild(dot);
+
+        // Content Card
+        const contentDiv = document.createElement('div');
+        contentDiv.className = 'timeline-content reveal'; // Add reveal for animation
+
+        // Date
+        if (item.date) {
+            const dateDiv = document.createElement('div');
+            dateDiv.className = 'timeline-date';
+            dateDiv.textContent = item.date;
+            contentDiv.appendChild(dateDiv);
+        }
+
+        // Title/Role/Institution
+        const titleText = item.title || item.role || item.position || item.institution;
+        if (titleText) {
+            const h3 = document.createElement('h3');
+            h3.className = 'card-title';
+            h3.textContent = titleText;
+            contentDiv.appendChild(h3);
+        }
+
+        // Subtitle (if separate institution/location)
+        if (item.institution && item.position) {
+            const sub = document.createElement('div');
+            sub.className = 'card-role';
+            sub.textContent = item.institution;
+            contentDiv.appendChild(sub);
+        }
+
+        if (item.location) {
+            const loc = document.createElement('span');
+            loc.className = 'location';
+            loc.innerHTML = `<i class="fas fa-map-marker-alt"></i> ${item.location}`;
+            contentDiv.appendChild(loc);
+        }
+
+        // Description
+        if (item.description) {
+            if (Array.isArray(item.description)) {
+                const ul = document.createElement('ul');
+                item.description.forEach(desc => {
+                    const li = document.createElement('li');
+                    li.textContent = desc;
+                    ul.appendChild(li);
+                });
+                contentDiv.appendChild(ul);
+            } else {
+                const p = document.createElement('p');
+                p.textContent = item.description;
+                contentDiv.appendChild(p);
+            }
+        }
+
+        // Image/Logo (Optional)
+        if (item.image) {
+            const img = document.createElement('img');
+            img.src = item.image;
+            img.alt = titleText;
+            img.className = 'card-logo timeline-logo'; // Added timeline-logo class for specific styling
+            contentDiv.appendChild(img);
+        }
+
+        itemDiv.appendChild(contentDiv);
+        container.appendChild(itemDiv);
+    });
+
+    section.appendChild(container);
+    return section;
+}
+
 function createPublicationGrid(title, items) {
     const section = document.createElement('section');
     section.id = title.replace(/\s+/g, '');
@@ -166,10 +384,8 @@ function createPublicationGrid(title, items) {
     const h2 = document.createElement('h2');
     h2.className = 'section-header';
     h2.textContent = title;
-    section.appendChild(h2);
-
     const grid = document.createElement('div');
-    grid.className = 'cards-grid pub-grid'; // Use pub-grid for 2-column layout
+    grid.className = 'cards-grid pub-grid'; // Use pub-grid for two-column layout
 
     items.forEach(item => {
         const card = document.createElement('div');
@@ -224,6 +440,7 @@ function createPublicationGrid(title, items) {
 
         cardContent += `</div>`;
         card.innerHTML = cardContent;
+        card.classList.add('reveal'); // Staggered reveal for cards
         grid.appendChild(card);
     });
 
@@ -335,6 +552,7 @@ function createSection(title, items) {
         cardContent += `</div>`; // Close wrapper
 
         card.innerHTML = cardContent;
+        card.classList.add('reveal');
         grid.appendChild(card);
     });
 

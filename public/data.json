@@ -2,6 +2,19 @@
   "Header": {
     "raw": "\\documentclass[11pt]article   BRAULIO FELIX GOMEZ, Ph.D.\\\\ \\hrulefill   brauliofenixgomez@hotmail.com • \\ LinkedIn: Braulio Felix  "
   },
+  "CitationStats": {
+    "totalCitations": 463,
+    "hIndex": 12,
+    "i10Index": 14,
+    "citationsPerYear": {
+      "2020": 4,
+      "2021": 71,
+      "2022": 91,
+      "2023": 96,
+      "2024": 81,
+      "2025": 116
+    }
+  },
   "About Me": {
     "description": [
       "Hello! I'm Braulio Felix Gomez, a passionate Robotics and AI Engineer with a Ph.D. from SUTD currently residing in Singapore. I love building autonomous systems that solve real-world problems. My expertise spans across navigation stack development, computer vision, and machine learning. In my free time, I enjoy participating in robotics competitions and teaching."

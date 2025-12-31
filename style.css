@@ -37,6 +37,37 @@ body {
         radial-gradient(circle at 90% 90%, rgba(0, 102, 255, 0.08) 0%, transparent 40%);
     z-index: -1;
     pointer-events: none;
+    animation: bgFlow 15s ease-in-out infinite alternate;
+}
+
+@keyframes bgFlow {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+/* Scroll Reveal Animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px),
+(max-height: 800px) {
+    .reveal {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
 }
 
 /* Typography */
@@ -384,9 +415,9 @@ section.content-section {
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px) scale(1.02);
     border-color: var(--accent);
-    box-shadow: 0 10px 30px -10px rgba(0, 243, 255, 0.1);
+    box-shadow: 0 10px 30px -10px rgba(0, 243, 255, 0.2);
 }
 
 .card-title {
@@ -449,10 +480,6 @@ section.content-section {
 }
 
 /* Ensure images in publication cards are consistent */
-.pub-card .card-image {
-    height: 200px;
-}
-
 .pub-content {
     flex-grow: 1;
 }
@@ -465,6 +492,170 @@ section.content-section {
     border-top: 1px solid var(--card-border);
     display: block;
     /* Ensure it takes space */
+}
+
+/* Publication Meta (Citations) */
+.pub-meta {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-style: italic;
+    display: block;
+}
+
+/* Timeline Layout */
+.timeline-container {
+    position: relative;
+    padding-left: 2rem;
+    border-left: 2px solid rgba(0, 243, 255, 0.2);
+    margin-left: 1rem;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+    padding-left: 2rem;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -2.6rem;
+    /* Adjust based on container padding + border width */
+    top: 0;
+    width: 16px;
+    height: 16px;
+    background: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--accent-glow);
+    z-index: 1;
+}
+
+.timeline-content {
+    /* Reuse card styles but ensure they fit nicely */
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    padding-right: 320px;
+    /* Make space for much larger logo */
+    min-height: 200px;
+    /* Ensure space for large logo */
+    position: relative;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-logo {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    max-width: 300px;
+    /* 3x larger (was 100px) */
+    max-height: 200px;
+    /* Increased height allowance */
+    width: auto;
+    object-fit: contain;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.95);
+    /* Ensure visibility on dark theme */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px) scale(1.02);
+    border-color: var(--accent);
+    box-shadow: 0 10px 30px -10px rgba(0, 243, 255, 0.2);
+}
+
+.timeline-date {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: rgba(0, 243, 255, 0.1);
+    color: var(--accent);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+/* Compact Citation Card (About Me) */
+.about-section {
+    position: relative;
+    /* Context for absolute positioning */
+}
+
+.about-content {
+    /* Existing: display: flex; align-items: start; gap: 2rem; */
+    position: relative;
+    padding-bottom: 2rem;
+    /* Buffer for card on mobile if needed, or just generally */
+}
+
+.citation-card {
+    position: relative;
+    /* Block layout to prevent overlap */
+    margin-top: 3rem;
+    /* Space from text */
+    width: 100%;
+    max-width: 600px;
+    /* Wider graph */
+    background: rgba(10, 20, 30, 0.5);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    margin-left: auto;
+    /* Center it if flex parent allows */
+    margin-right: auto;
+}
+
+.citation-header {
+    margin-bottom: 0.5rem;
+}
+
+.citation-metrics {
+    display: flex;
+    justify-content: space-around;
+}
+
+.citation-metrics .metric {
+    text-align: center;
+}
+
+.citation-metrics .metric-val {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.citation-metrics .metric-label {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+}
+
+.citation-graph {
+    height: 150px;
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .citation-card {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        margin-top: 1.5rem;
+        width: 100%;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 /* Skills Section */
