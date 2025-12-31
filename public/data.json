@@ -115,10 +115,7 @@
       "category": "AI (+5 years)",
       "values": [
         "Experience developing data pipelines",
-        "inference pipelines and training pipelines using libraries like Tensorflow",
-        "Pytorch and cloud systems like AWS",
-        "Gcloud",
-        "Azure. Strong understanding in AI governance and Model Risk Management."
+        "Experience developing and deploying inference pipelines and training pipelines",
       ]
     },
     {
@@ -128,7 +125,7 @@
         "CSS",
         "JavaScript",
         "Apache Web Server",
-        "NodeJS. Experience troubleshooting networking and system-level issues in distributed deployments."
+        "NodeJS"
       ]
     },
     {
@@ -142,25 +139,23 @@
     {
       "category": "Dev Ops (+1 years)",
       "values": [
-        "GITHUB",
-        "GITLAB",
-        "experience creating development workflows and coordinating developers",
-        "experience deploying Docker in production-like settings."
+        "GITHUB (workflows and coordinating developer)",
+        "GITLAB (workflows and coordinating developer)",
+        "Docker in production-like settings."
       ]
     },
     {
       "category": "Hardware",
       "values": [
         "Experience interfacing hardware to custom made controller software",
-        "experience in firmware programming using C/C++."
+        "Experience in firmware programming using C/C++."
       ]
     },
     {
       "category": "Languages",
       "values": [
-        "Strong reading",
-        "writing",
-        "and speaking competencies for English and Spanish"
+        "Spanish",
+        "English"
       ]
     },
     {
@@ -175,7 +170,7 @@
         "Academic research (+5 years)",
         "teaching",
         "training",
-        "and publishing"
+        "publishing research papers"
       ]
     }
   ],
