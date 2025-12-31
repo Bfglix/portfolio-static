@@ -24,6 +24,9 @@ body {
     font-family: var(--font-body);
     overflow-x: hidden;
     line-height: 1.6;
+    position: relative;
+    /* Context for absolute visuals */
+    min-height: 100vh;
 }
 
 /* Background Mesh Gradient */
@@ -47,8 +50,16 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: -10;
     pointer-events: none;
+    opacity: 0;
+    /* Hidden by default */
+    transition: opacity 1.5s ease;
+    /* Smooth fade in */
+}
+
+#particles-js.visible {
+    opacity: 1;
 }
 
 @keyframes bgFlow {

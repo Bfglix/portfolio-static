@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch(err => console.error('Error loading data:', err));
 
     const scrollIndicator = document.querySelector('.scroll-indicator');
+    const particlesContainer = document.getElementById('particles-js');
+
     if (scrollIndicator) {
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
@@ -13,6 +15,15 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 scrollIndicator.style.opacity = '1';
                 scrollIndicator.style.pointerEvents = 'auto';
+            }
+
+            // Particles Visibility Logic
+            if (particlesContainer) {
+                if (window.scrollY > window.innerHeight * 0.8) { // Show when scrolled past 80% of hero
+                    particlesContainer.classList.add('visible');
+                } else {
+                    particlesContainer.classList.remove('visible');
+                }
             }
         });
     }
@@ -49,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
             },
             "interactivity": {
-                "detect_on": "canvas",
+                "detect_on": "window",
                 "events": { "onhover": { "enable": true, "mode": "repulse" }, "onclick": { "enable": true, "mode": "push" }, "resize": true },
                 "modes": { "repulse": { "distance": 100, "duration": 0.4 }, "push": { "particles_nb": 4 } }
             },
