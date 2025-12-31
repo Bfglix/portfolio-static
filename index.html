@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI & Robotics Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Space+Grotesk:wght@300;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="background-mesh"></div>
+
+    <header>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="#AboutMe">About Me</a></li>
+                <li><a href="#Experience">Experience</a></li>
+                <li><a href="#Education">Education</a></li>
+                <li><a href="#Skills">Skills</a></li>
+                <li><a href="#Certifications">Certifications</a></li>
+                <li><a href="#ResearchPublications">Publications</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="app">
+        <section class="hero">
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="public/vid.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="hero-content">
+                <h1 class="glitch-text" data-text="Building the Future">Building the Future</h1>
+                <p class="subtitle">AI & Robotics Engineer</p>
+            </div>
+            <div class="scroll-indicator">
+                <span>Explore</span>
+                <i class="fas fa-arrow-down"></i>
+            </div>
+        </section>
+
+        <!-- Dynamic Content Will Be Injected Here -->
+        <div id="dynamic-content"></div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Braulio Felix Gomez</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

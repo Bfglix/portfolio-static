@@ -1,0 +1,312 @@
+{
+  "Header": {
+    "raw": "\\documentclass[11pt]article   BRAULIO FELIX GOMEZ, Ph.D.\\\\ \\hrulefill   brauliofenixgomez@hotmail.com • \\ LinkedIn: Braulio Felix  "
+  },
+  "About Me": {
+    "description": [
+      "Hello! I am a passionate Robotics and AI Engineer with a Ph.D. from SUTD. I love building autonomous systems that solve real-world problems. My expertise spans across navigation stack development, computer vision, and machine learning. In my free time, I enjoy participating in robotics competitions and teaching."
+    ],
+    "image": "placeholder_profile.jpg"
+  },
+  "Education": [
+    {
+      "institution": "Singapore University of Technology and Design (SUTD)",
+      "location": "Singapore",
+      "description": [
+        "Thesis Title: Towards Effective Autonomy Strategies for Outdoor Robots.",
+        "I joined the PhD program in the Faculty of Engineering Product Development, where for four years conducted research on navigation algorithms for outdoor robotic systems. These algorithms were implemented and deployed across multiple robotic platforms. The resulting work was documented and disseminated through several peer-reviewed publications authored by me in collaboration with other researchers from SUTD. Each project I was involved in was funded by Singaporean government organizations as the National Robotics Programme."
+      ],
+      "position": "Ph.D., Robotics, Automation, AI.",
+      "date": "2021 – 2025"
+    },
+    {
+      "institution": "Instituto Tecnológico de Los Mochis",
+      "location": "Mexico",
+      "description": [
+        "Thesis Title: Management System for University Student Services.",
+        "I enrolled in the Bachelor’s program in Informatics, where I developed intermediate to advanced programming skills in Java, JavaScript, C, and C++. Informatics is a discipline focused on how data is managed within backend systems and transformed into actionable information for decision-making in business environments and other automated software systems. For my graduation thesis, I programmed a content management system to support the administration of scholarships for international students."
+      ],
+      "position": "BSc. Engineering in Informatics.",
+      "date": "2014 – 2019"
+    },
+    {
+      "institution": "Centro de Bachillerato Tecnológico Industrial y de Servicios no.43",
+      "location": "Mexico",
+      "description": [
+        "Dip.Tech., Mechatronics."
+      ],
+      "position": "Dip.Tech., Mechatronics.",
+      "date": "2010 – 2013"
+    }
+  ],
+  "Experience": [
+    {
+      "institution": "Singapore University of Technology and Design, ROAR lab",
+      "location": "Singapore",
+      "description": [
+        "Led a robot autonomy team for the Panthera v2.0 outdoor sweeper robot.",
+        "Developed a full navigation stack using the Robot Operating System (ROS) for the Panthera platform. Using for this C++ and Python3 and different control architectures like Behaviour Trees, Machine States, Reinforcement Learning , Genetic Algorithms and other Bio-Inspired decision making algorithms.",
+        "Achieved LTA certification in Singapore for the Panthera platform after passing the T1 CETRAN test in two different dates for two different platforms, PantheraV1 and PantheraV2.",
+        "Created a virtual robotics contest platform named Smorphi Imaginary, using the Unity engine, and a back-end programmed in NodeJS.Using for this C\\#, Javascript, Typescript, HTML5,MongoDB.",
+        "Deployed the Smorphi Imaginary platform for an official contest in March 2023 at Singapore, supporting more than 200 participants simultaneously.",
+        "Developed an embodied AI framework for the Dragonfly Mosquito Catcher robot, reducing the complexity curve of deployment tasks. Using Python, chat GPT 5 official API and ROS",
+        "Engineered a Next.js and WebSockets platform for the Dragonfly robot, using Typescript, Javascript , HTML5, CSS and MongoDB for data storage that enables the robotic platform to perform scheduled path planning, video streaming, remote operation and reporting of every sensor used by the robot.",
+        "Led the publication of multiple papers in $Q_1$ journals related to AI, Machine Learning, Robotics, and Autonomy."
+      ],
+      "position": "PhD Candidate",
+      "date": "2021 – 2025"
+    },
+    {
+      "institution": "LionsBot",
+      "location": "Singapore",
+      "description": [
+        "Supported research projects focused on robotics and automation, contributing to a body of work that resulted in multiple journal publications.",
+        "Contributed at Lionsbot developing different computer vision modules and Reinforcement Learning solutions  for their robotic platforms, using for this Tensorflow, Pytorch and Intel OpenVINO.",
+        "Contributed at Lionsbot developing different computer vision modules and Reinforcement Learning solutions  for their robotic platforms, using for this Tensorflow, Pytorch and Intel OpenVINO.",
+        "Designed and implemented firmware in C/C++ to interface hardware components with custom controller software.",
+        "Designed and implemented simulation environments for robotic platforms using Gazebo running on top of ROS1/ROS2."
+      ],
+      "position": "AI/Robotics Enginner",
+      "date": "2020 – 2021"
+    },
+    {
+      "institution": "Free Lancer",
+      "location": "Mexico-Singapore",
+      "description": [
+        "Developed the backend for a blockchain-based candy machine system for NFT sales. Using the Solana blockchain.",
+        "Integrated the system to connect to users' wallets and trigger an RNG-based generator to supply image NFTs on the Solana blockchain. Using for this NodeJs, with Next and MongoDB for data storage.",
+        "Developed the backend API in Node.js for SomosOne a contest web application for breakdance performers in Mexico. contributed to the full backend API and the roster creation system for the SomosOne social platform.",
+        "Served as an instructor at the Instituto Tecnológico de Los Mochis, delivering a training course for faculty titled “Modern Prototyping Techniques: 3D Model Design Focused on 3D Printing.”. Teaching in this course how to use SolidWorks to prototype mechanical parts and the design considerations to facilitate the 3D printing process.",
+        "Developed data pipelines, inference pipelines, and training pipelines using libraries such as TensorFlow and PyTorch, deployed on cloud computing platforms including AWS, Google Cloud, and Azure. Demonstrated a strong understanding of AI governance and Model Risk Management."
+      ],
+      "position": "Full Stack Software Engineer",
+      "date": "2019 – 2025"
+    }
+  ],
+  "Certifications": [
+    "AI Engineer MLOps Track: Deploy Gen AI & Agentic AI at Scale from Udemy (2025)",
+    "Devops y cloud con azure devops, app service pipelines y git from Udemy (2025)",
+    "Programming Patterns in JavaScript and TypeScript from Udemy (2025)",
+    "Javascipt Intermediate from HackerRank (2025)",
+    "Problem Solving Intermediate from HackerRank (2025)",
+    "Rest API Intermediate from HackerRank (2025)",
+    "Software Engineer from HackerRank (2025)",
+    "SQL intermediate from HackerRank (2025)"
+  ],
+  "Skills": [
+    {
+      "category": "Coding (+4 years)",
+      "values": [
+        "Java",
+        "PHP",
+        "Python",
+        "SQL",
+        "C/C++",
+        "XML/XSL",
+        "$_ $"
+      ]
+    },
+    {
+      "category": "AI (+5 years)",
+      "values": [
+        "Experience developing data pipelines",
+        "inference pipelines and training pipelines using libraries like Tensorflow",
+        "Pytorch and cloud systems like AWS",
+        "Gcloud",
+        "Azure. Strong understanding in AI governance and Model Risk Management."
+      ]
+    },
+    {
+      "category": "Web Dev (+2 years)",
+      "values": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Apache Web Server",
+        "NodeJS. Experience troubleshooting networking and system-level issues in distributed deployments."
+      ]
+    },
+    {
+      "category": "Databases (+5 years)",
+      "values": [
+        "MYSQL",
+        "SQLITE",
+        "MongoDB"
+      ]
+    },
+    {
+      "category": "Dev Ops (+1 years)",
+      "values": [
+        "GITHUB",
+        "GITLAB",
+        "experience creating development workflows and coordinating developers",
+        "experience deploying Docker in production-like settings."
+      ]
+    },
+    {
+      "category": "Hardware",
+      "values": [
+        "Experience interfacing hardware to custom made controller software",
+        "experience in firmware programming using C/C++."
+      ]
+    },
+    {
+      "category": "Languages",
+      "values": [
+        "Strong reading",
+        "writing",
+        "and speaking competencies for English and Spanish"
+      ]
+    },
+    {
+      "category": "Operating System Management",
+      "values": [
+        "Strong knowledge in Linux for deployment."
+      ]
+    },
+    {
+      "category": "Misc. Competencies",
+      "values": [
+        "Academic research (+5 years)",
+        "teaching",
+        "training",
+        "and publishing"
+      ]
+    }
+  ],
+  "Research Publications": [
+    {
+      "category": "Journal Articles",
+      "title": "A framework for coverage path planning of outdoor sweeping robots deployed in large environments,",
+      "metaDescription": "Gómez, Braulio Félix, A. Jayadeep, M. V. J. Muthugala, and M. R. Elara,  Mathematics, vol. 13, no. 14, p. 2238, 2025.",
+      "url": "https://scholar.google.com/scholar?q=A%20framework%20for%20coverage%20path%20planning%20of%20outdoor%20sweeping%20robots%20deployed%20in%20large%20environments%2C",
+      "isSearchLink": true
+    },
+    {
+      "category": "Journal Articles",
+      "title": "RI-based vibration-aware path planning for mobile robots' health and safety,",
+      "metaDescription": "S. Pookkuttath, Gomez, Braulio Felix, and M. R. Elara,  Mathematics, vol. 13, no. 6, p. 913, 2025.",
+      "url": "https://scholar.google.com/scholar?q=RI-based%20vibration-aware%20path%20planning%20for%20mobile%20robots'%20health%20and%20safety%2C",
+      "isSearchLink": true
+    },
+    {
+      "category": "Journal Articles",
+      "title": "Deep learning based fall recognition and forecasting for reconfigurable stair-accessing service robots,",
+      "metaDescription": "J. H. Ong, A. A. Hayat, Gomez, Braulio Felix, M. R. Elara, and K. L. Wood,  Mathematics, vol. 12, no. 9, p. 1312, 2024.",
+      "url": "https://scholar.google.com/scholar?q=Deep%20learning%20based%20fall%20recognition%20and%20forecasting%20for%20reconfigurable%20stair-accessing%20service%20robots%2C",
+      "isSearchLink": true
+    },
+    {
+      "category": "Journal Articles",
+      "title": "An optical flow-based method for condition-based maintenance and operational safety in autonomous cleaning robots,",
+      "metaDescription": "S. Pookkuttath, Gomez, Braulio Felix, M. R. Elara, and P. Thejus,  Expert Systems with Applications, vol. 222, p. 119 802, 2023.",
+      "url": "https://scholar.google.com/scholar?q=An%20optical%20flow-based%20method%20for%20condition-based%20maintenance%20and%20operational%20safety%20in%20autonomous%20cleaning%20robots%2C",
+      "isSearchLink": true
+    },
+    {
+      "category": "Journal Articles",
+      "title": "A novel path planning strategy for a cleaning audit robot using geometrical features and swarm algorithms,",
+      "metaDescription": "T. Pathmakumar, M. V. J. Muthugala, S. B. P. Samarakoon, Gómez, Braulio Félix, and M. R. Elara,  Sensors, vol. 22, no. 14, p. 5317, 2022.",
+      "url": "https://scholar.google.com/scholar?q=A%20novel%20path%20planning%20strategy%20for%20a%20cleaning%20audit%20robot%20using%20geometrical%20features%20and%20swarm%20algorithms%2C",
+      "isSearchLink": true
+    },
+    {
+      "category": "Journal Articles",
+      "title": "Self-reconfigurable robot vision pipeline for safer adaptation to varying pavements width and surface conditions,",
+      "metaDescription": "L. Yi, Félix Gómez, Braulio, B. Ramalingam, M. M. Rayguru, M. R. Elara, and A. A. Hayat,  Scientific reports, vol. 12, no. 1, p. 14 557, 2022.",
+      "url": "https://scholar.google.com/scholar?q=Self-reconfigurable%20robot%20vision%20pipeline%20for%20safer%20adaptation%20to%20varying%20pavements%20width%20and%20surface%20conditions%2C",
+      "isSearchLink": true
+    },
+    {
+      "category": "Journal Articles",
+      "title": "Social density monitoring toward selective cleaning by human support robot with 3d based perception system,",
+      "metaDescription": "A. V. Le, B. Ramalingam, Gomez, Braulio Felix, R. E. Mohan, T. H. Q. Minh, and V. Sivanantham,  IEEE Access, vol. 9, pp. 41 407-41 416, 2021.",
+      "url": "https://scholar.google.com/scholar?q=Social%20density%20monitoring%20toward%20selective%20cleaning%20by%20human%20support%20robot%20with%203d%20based%20perception%20system%2C",
+      "isSearchLink": true
+    },
+    {
+      "category": "Journal Articles",
+      "title": "Remote drain inspection framework using the convolutional neural network and re-configurable robot raptor,",
+      "metaDescription": "L. M. J. Melvin, R. E. Mohan, A. Semwal, et al.,  Scientific reports, vol. 11, no. 1, p. 22 378, 2021.",
+      "url": "https://scholar.google.com/scholar?q=Remote%20drain%20inspection%20framework%20using%20the%20convolutional%20neural%20network%20and%20re-configurable%20robot%20raptor%2C",
+      "isSearchLink": true
+    },
+    {
+      "category": "Journal Articles",
+      "title": "Drain structural defect detection and mapping using ai-enabled reconfigurable robot raptor and iort framework,",
+      "metaDescription": "P. Palanisamy, R. E. Mohan, A. Semwal, et al.,  Sensors, vol. 21, no. 21, p. 7287, 2021.",
+      "url": "https://scholar.google.com/scholar?q=Drain%20structural%20defect%20detection%20and%20mapping%20using%20ai-enabled%20reconfigurable%20robot%20raptor%20and%20iort%20framework%2C",
+      "isSearchLink": true
+    },
+    {
+      "category": "Journal Articles",
+      "title": "A reinforcement learning based dirt-exploration for cleaning-auditing robot,",
+      "metaDescription": "T. Pathmakumar, M. R. Elara, Gómez, Braulio Félix, and B. Ramalingam,  Sensors, vol. 21, no. 24, p. 8331, 2021.",
+      "url": "https://scholar.google.com/scholar?q=A%20reinforcement%20learning%20based%20dirt-exploration%20for%20cleaning-auditing%20robot%2C",
+      "isSearchLink": true
+    },
+    {
+      "category": "Journal Articles",
+      "title": "Stetro-deep learning powered staircase cleaning and maintenance reconfigurable robot,",
+      "metaDescription": "B. Ramalingam, R. Elara Mohan, S. Balakrishnan, et al.,  Sensors, vol. 21, no. 18, p. 6279, 2021.",
+      "url": "https://scholar.google.com/scholar?q=Stetro-deep%20learning%20powered%20staircase%20cleaning%20and%20maintenance%20reconfigurable%20robot%2C",
+      "isSearchLink": true
+    },
+    {
+      "category": "Journal Articles",
+      "title": "Deep learning based pavement inspection using self-reconfigurable robot,",
+      "metaDescription": "B. Ramalingam, A. A. Hayat, M. R. Elara, et al.,  Sensors, vol. 21, no. 8, p. 2595, 2021.",
+      "url": "https://scholar.google.com/scholar?q=Deep%20learning%20based%20pavement%20inspection%20using%20self-reconfigurable%20robot%2C",
+      "isSearchLink": true
+    },
+    {
+      "category": "Journal Articles",
+      "title": "Ai enabled iort framework for rodent activity monitoring in a false ceiling environment,",
+      "metaDescription": "B. Ramalingam, T. Tun, R. E. Mohan, et al.,  Sensors, vol. 21, no. 16, p. 5326, 2021.",
+      "url": "https://scholar.google.com/scholar?q=Ai%20enabled%20iort%20framework%20for%20rodent%20activity%20monitoring%20in%20a%20false%20ceiling%20environment%2C",
+      "isSearchLink": true
+    },
+    {
+      "category": "Journal Articles",
+      "title": "Locomotion with pedestrian aware from perception sensor by pavement sweeping reconfigurable robot,",
+      "metaDescription": "L. Yi, A. V. Le, B. Ramalingam, et al.,  Sensors, vol. 21, no. 5, p. 1745, 2021.",
+      "url": "https://scholar.google.com/scholar?q=Locomotion%20with%20pedestrian%20aware%20from%20perception%20sensor%20by%20pavement%20sweeping%20reconfigurable%20robot%2C",
+      "isSearchLink": true
+    },
+    {
+      "category": "Journal Articles",
+      "title": "Remote insects trap monitoring system using deep learning framework and iot,",
+      "metaDescription": "B. Ramalingam, R. E. Mohan, S. Pookkuttath, et al.,  Sensors, vol. 20, no. 18, p. 5280, 2020.",
+      "url": "https://scholar.google.com/scholar?q=Remote%20insects%20trap%20monitoring%20system%20using%20deep%20learning%20framework%20and%20iot%2C",
+      "isSearchLink": true
+    },
+    {
+      "category": "Journal Articles",
+      "title": "A human support robot for the cleaning and maintenance of door handles using a deep-learning framework,",
+      "metaDescription": "B. Ramalingam, J. Yin, M. Rajesh Elara, et al.,  Sensors, vol. 20, no. 12, p. 3543, 2020.",
+      "url": "https://scholar.google.com/scholar?q=A%20human%20support%20robot%20for%20the%20cleaning%20and%20maintenance%20of%20door%20handles%20using%20a%20deep-learning%20framework%2C",
+      "isSearchLink": true
+    },
+    {
+      "category": "Journal Articles",
+      "title": "A time delay estimation based adaptive sliding mode strategy for hybrid impedance control,",
+      "metaDescription": "M. M. Rayguru, M. R. Elara, Gomez, Braulio Felix, and B. Ramalingam,  IEEE Access, vol. 8, pp. 155 352-155 361, 2020.",
+      "url": "https://scholar.google.com/scholar?q=A%20time%20delay%20estimation%20based%20adaptive%20sliding%20mode%20strategy%20for%20hybrid%20impedance%20control%2C",
+      "isSearchLink": true
+    },
+    {
+      "category": "Journal Articles",
+      "title": "Vision based wall following framework: A case study with hsr robot for cleaning application,",
+      "metaDescription": "T. W. Teng, P. Veerajagadheswar, B. Ramalingam, J. Yin, R. Elara Mohan, and Gómez, Braulio Félix,  Sensors, vol. 20, no. 11, p. 3298, 2020.",
+      "url": "https://scholar.google.com/scholar?q=Vision%20based%20wall%20following%20framework%3A%20A%20case%20study%20with%20hsr%20robot%20for%20cleaning%20application%2C",
+      "isSearchLink": true
+    },
+    {
+      "category": "Conference Proceedings",
+      "title": "Deep learning based litter identification and adaptive cleaning using self-reconfigurable pavement sweeping robot,",
+      "metaDescription": "Gómez, Braulio Félix, L. Yi, B. Ramalingam, et al.,  in 2022 IEEE 18th International Conference on Automation Science and Engineering (CASE), IEEE, 2022, pp. 2301-2306.",
+      "url": "https://scholar.google.com/scholar?q=Deep%20learning%20based%20litter%20identification%20and%20adaptive%20cleaning%20using%20self-reconfigurable%20pavement%20sweeping%20robot%2C",
+      "isSearchLink": true
+    }
+  ]
+}
