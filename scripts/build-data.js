@@ -10,16 +10,49 @@ if (!fs.existsSync(path.join(__dirname, '../public'))) {
     fs.mkdirSync(path.join(__dirname, '../public'));
 }
 
+// Metadata Cache File
+const CACHE_FILE = path.join(__dirname, '../public/metadata-cache.json');
+const LOGOS_FILE = path.join(__dirname, '../public/institution-logos.json');
+let metadataCache = {};
+let institutionLogos = {};
+
+if (fs.existsSync(CACHE_FILE)) {
+    try {
+        metadataCache = JSON.parse(fs.readFileSync(CACHE_FILE, 'utf8'));
+    } catch (e) {
+        console.error('Failed to load cache:', e);
+    }
+}
+
+if (fs.existsSync(LOGOS_FILE)) {
+    try {
+        institutionLogos = JSON.parse(fs.readFileSync(LOGOS_FILE, 'utf8'));
+    } catch (e) {
+        console.error('Failed to load logos:', e);
+    }
+}
+
+function saveCache() {
+    fs.writeFileSync(CACHE_FILE, JSON.stringify(metadataCache, null, 2));
+}
+
 async function main() {
     console.log('Reading resume.tex...');
     try {
         const latexContent = fs.readFileSync(RESUME_PATH, 'utf-8');
         const parsedData = parseComplexLatex(latexContent);
 
-        // Enrich publications if possible (search for them?)
-        // Since we don't have URLs, we can just pass the parsed data.
-        // Or we could try to scrape images based on title search, but that's risky/complex for now.
-        // We will stick to accurate parsing.
+        console.log('Enriching Publications with Images...');
+        if (parsedData['Research Publications']) {
+            await enrichPublications(parsedData['Research Publications']);
+        }
+
+        console.log('Enriching Experience and Education with Logos...');
+        ['Experience', 'Education'].forEach(section => {
+            if (parsedData[section]) {
+                enrichInstitutions(parsedData[section]);
+            }
+        });
 
         console.log('Writing data...');
         fs.writeFileSync(OUTPUT_PATH, JSON.stringify(parsedData, null, 2));
@@ -27,6 +60,69 @@ async function main() {
 
     } catch (error) {
         console.error('Error during build:', error);
+    }
+}
+
+function enrichInstitutions(items) {
+    items.forEach(item => {
+        if (item.institution && institutionLogos[item.institution]) {
+            item.image = institutionLogos[item.institution];
+        }
+    });
+}
+
+async function enrichPublications(publications) {
+    for (const pub of publications) {
+        // Skip if it's a generated search link, unless we really want to try (we don't)
+        if (!pub.url || pub.isSearchLink) continue;
+
+        if (metadataCache[pub.url]) {
+            // Cache Hit
+            if (metadataCache[pub.url].image) {
+                pub.image = metadataCache[pub.url].image;
+                console.log(`Cache hit for ${pub.title.substring(0, 30)}...`);
+            }
+            continue;
+        }
+
+        // Cache Miss - Scrape
+        try {
+            console.log(`Fetching ${pub.url}...`);
+            const { data: html } = await axios.get(pub.url, {
+                headers: {
+                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+                    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
+                    'Accept-Language': 'en-US,en;q=0.9',
+                    'Referer': 'https://www.google.com/'
+                },
+                timeout: 10000
+            });
+
+            const $ = cheerio.load(html);
+            let image = $('meta[property="og:image"]').attr('content');
+            if (!image) image = $('meta[name="twitter:image"]').attr('content');
+
+            if (image) {
+                // Handle relative URLs
+                if (image.startsWith('/')) {
+                    const urlObj = new URL(pub.url);
+                    image = `${urlObj.protocol}//${urlObj.host}${image}`;
+                }
+
+                pub.image = image;
+                metadataCache[pub.url] = { image, timestamp: Date.now() };
+                console.log(`Found image for ${pub.url}`);
+            } else {
+                console.log(`No image found for ${pub.url}`);
+                metadataCache[pub.url] = { image: null, timestamp: Date.now() }; // Cache negative result
+            }
+        } catch (error) {
+            console.error(`Error fetching ${pub.url}:`, error.message);
+        }
+
+        // Polite delay
+        await new Promise(r => setTimeout(r, 1000));
+        saveCache(); // Save incrementally
     }
 }
 
@@ -265,15 +361,42 @@ function parsePublications(lines) {
                 title = text; // Fallback
             }
 
-            // Create a search URL since we don't have one
-            const searchUrl = `https://scholar.google.com/scholar?q=${encodeURIComponent(title)}`;
+            // Check for explicit URL in the line (\url{...})
+            // Since cleanLatex removes \url{...}, we need to check the RAW line or check before cleaning?
+            // Actually cleanLatex returns the url value inside \url{...} if regex matches, 
+            // BUT cleanLatex logic for url is: .replace(/\\url\{(.*?)\}/g, '$1') -> It extracts the text but doesn't isolate it.
+            // AND parsePublications uses cleanLatex on the WHOLE line? No, it uses cleanLatex(line.replace('\\item', ''))
+
+            // Re-evaluating: 'meta' currently contains the raw text MINUS the title.
+            // If \url is present, cleanLatex has stripped the \url command but kept the URL text.
+            // We need to find that URL text.
+            // Heuristic: Last part of string starting with http ?
+
+            // Better approach: Look at the raw 'line' for \url before cleaning?
+            // Yes.
+
+            let url = `https://scholar.google.com/scholar?q=${encodeURIComponent(title)}`;
+            let isSearchLink = true;
+
+            const urlMatch = line.match(/\\url\{(.*?)\}/);
+            if (urlMatch) {
+                url = urlMatch[1];
+                isSearchLink = false;
+                // We should remove the URL from meta description to avoid duplication
+                // But meta is calculated from 'cleaned' text where \url{} became just the url.
+                // It's a bit messy. Let's cleaner replace in meta.
+                meta = meta.replace(url, '').trim();
+                meta = meta.replace(urlMatch[0], '').trim(); // Try both just in case
+                // Clean up trailing commas/dots
+                meta = meta.replace(/,\s*$/, '').replace(/\.\s*$/, '');
+            }
 
             pubs.push({
                 category: currentCategory,
                 title: title,
-                metaDescription: meta, // Authors/Journal info usually surrounding the title
-                url: searchUrl,
-                isSearchLink: true
+                metaDescription: meta,
+                url: url,
+                isSearchLink: isSearchLink
             });
         }
     }
