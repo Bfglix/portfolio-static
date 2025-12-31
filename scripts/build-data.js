@@ -82,6 +82,9 @@ async function enrichPublications(publications) {
                 pub.image = metadataCache[pub.url].image;
                 console.log(`Cache hit for ${pub.title.substring(0, 30)}...`);
             }
+            if (metadataCache[pub.url].description) {
+                pub.description = metadataCache[pub.url].description;
+            }
             continue;
         }
 

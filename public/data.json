@@ -4,7 +4,7 @@
   },
   "About Me": {
     "description": [
-      "Hello! I am a passionate Robotics and AI Engineer with a Ph.D. from SUTD. I love building autonomous systems that solve real-world problems. My expertise spans across navigation stack development, computer vision, and machine learning. In my free time, I enjoy participating in robotics competitions and teaching."
+      "Hello! I'm Braulio Felix Gomez, a passionate Robotics and AI Engineer with a Ph.D. from SUTD currently residing in Singapore. I love building autonomous systems that solve real-world problems. My expertise spans across navigation stack development, computer vision, and machine learning. In my free time, I enjoy participating in robotics competitions and teaching."
     ],
     "image": "placeholder_profile.jpg"
   },
@@ -29,7 +29,7 @@
       ],
       "position": "BSc. Engineering in Informatics.",
       "date": "2014 – 2019",
-      "image": "public/LogoTCNM.png"
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnbIT8YTWchZX0C6RWhZvZ4jF-MWxN3l0yfg&s"
     },
     {
       "institution": "Centro de Bachillerato Tecnológico Industrial y de Servicios no.43",
@@ -106,6 +106,8 @@
         "Java",
         "PHP",
         "Python",
+        "JavaScript",
+        "TypeScript",
         "SQL",
         "C/C++",
         "XML/XSL"
@@ -114,18 +116,15 @@
     {
       "category": "AI (+5 years)",
       "values": [
-        "Experience developing data pipelines",
-        "Experience developing and deploying inference pipelines and training pipelines"
+        "Development and deployment of Inference/Training pipelines for AI models",
+        "Strong understanding in AI governance and Model Risk Management."
       ]
     },
     {
       "category": "Web Dev (+2 years)",
       "values": [
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "Apache Web Server",
-        "NodeJS"
+        "NodeJS",
+        "Apache"
       ]
     },
     {
@@ -139,29 +138,30 @@
     {
       "category": "Dev Ops (+1 years)",
       "values": [
-        "GITHUB (workflows and coordinating developer)",
-        "GITLAB (workflows and coordinating developer)",
-        "Docker in production-like settings."
+        "GitHub (Workflows, CI/CD)",
+        "GitLab (Workflows, CI/CD)",
+        "Docker (Production-like deployments)"
       ]
     },
     {
       "category": "Hardware",
       "values": [
-        "Experience interfacing hardware to custom made controller software",
-        "Experience in firmware programming using C/C++."
+        "Experience interfacing hardware to Cloud platforms",
+        "Experience in firmware programming using C/C++"
       ]
     },
     {
       "category": "Languages",
       "values": [
-        "Spanish",
-        "English"
+        "English",
+        "Spanish"
       ]
     },
     {
       "category": "Operating System Management",
       "values": [
-        "Strong knowledge in Linux for deployment."
+        "Strong knowledge in Linux for deployment.",
+        "Windows knowledge for development"
       ]
     },
     {
@@ -170,7 +170,7 @@
         "Academic research (+5 years)",
         "teaching",
         "training",
-        "publishing research papers"
+        "and publishing"
       ]
     }
   ],
@@ -181,7 +181,8 @@
       "metaDescription": "B. F. Gómez, J. W. S. Lee, A. Jayadeep, M. A. V. J. Muthugala, and M. R. Elara,  Mathematics, vol. 13, no. 20, p. 3277, 2025",
       "url": "https://www.mdpi.com/2227-7390/13/20/3277",
       "isSearchLink": false,
-      "image": "https://pub.mdpi-res.com/mathematics/mathematics-13-03277/article_deploy/html/images/mathematics-13-03277-g001-550.jpg?1760433542"
+      "image": "https://pub.mdpi-res.com/mathematics/mathematics-13-03277/article_deploy/html/images/mathematics-13-03277-g001-550.jpg?1760433542",
+      "description": "Robot-aided outdoor cleaning is a challenging task with plenty of room for improvement. The cleaning profile of a robot should be adjusted based on the availability of litter to ensure proper and efficient cleaning. This article proposes a novel system that integrates a Glasius Bio-Inspired Neural Network (GBNN) for coverage path planning with a vision-based cleaning profile adaptation scheme. The vision-based adaptation occurs based on the presence of leaves on the ground. The proposed system operates in two phases: an initial phase with low-power cleaning to cover areas with no leaves, while localizing leaf spots that require high-power cleaning, and a secondary phase focusing on cleaning these detected leaf spots using a high-power cleaning profile. This cleaning profile adaptation enables more efficient and effective cleaning. Simulation results showed a 47% improvement in energy efficiency for the proposed method compared to a method with no cleaning profile adaptation. Robot hardware tests conducted using the Panthera 2.0 outdoor cleaning robot have demonstrated the real-world applicability of the proposed method."
     },
     {
       "category": "Journal Articles",
@@ -189,7 +190,8 @@
       "metaDescription": "Gómez, Braulio Félix, L. Yi, B. Ramalingam, et al.,  in 2022 IEEE 18th International Conference on Automation Science and Engineering (CASE), IEEE, 2022, pp. 2301-2306",
       "url": "https://ieeexplore.ieee.org/document/9926489/",
       "isSearchLink": false,
-      "image": "https://ieeexplore.ieee.org/assets/img/ieee_logo_smedia_200X200.png"
+      "image": "https://ieeexplore.ieee.org/assets/img/ieee_logo_smedia_200X200.png",
+      "description": "Pavement sweeping, which is primarily labor-intensive, is essential to keep it clean and hygienic for use. Humans play the role of identifying the litter to pick and adjust the vacuum suction power. In this paper, we propose a framework that consists of two layers, namely, a) the first method is to identify commonly found litter on pavements, b) secondly, an adaptive vacuum suction scheme based on fuzzy logic is implemented for more efficient pick up of the identified litter. Semantic segmentation using Convolution Neural Network (CNN) SegNet was adopted to segment the pavement region from other objects. Then, the Deep Convolutional Neural Network (DCNN) based object detection is used to detect pavement litter. Afterward, the calibrated vacuum suction as per identified litter was selected based on fuzzy-based adaptive actuation. Further, the proposed framework’s efficacy is successfully tested on a self-reconfigurable pavement sweeping robot named Panthera. The inspection framework was configured in Jetson Nano Nvidia GPU and took approximately 132.2 milliseconds to detect litter. In the experiment conducted, there is a 38.5 % improvement in energy consumption for the pavement cleaning task using a depth-based vision system and a vacuum suction motor and can be used in runtime."
     },
     {
       "category": "Journal Articles",
@@ -197,7 +199,8 @@
       "metaDescription": "Gómez, Braulio Félix, A. Jayadeep, M. V. J. Muthugala, and M. R. Elara,  Mathematics, vol. 13, no. 14, p. 2238, 2025",
       "url": "https://www.mdpi.com/2227-7390/13/14/2238",
       "isSearchLink": false,
-      "image": "https://pub.mdpi-res.com/mathematics/mathematics-13-02238/article_deploy/html/images/mathematics-13-02238-g001-550.jpg?1752149775"
+      "image": "https://pub.mdpi-res.com/mathematics/mathematics-13-02238/article_deploy/html/images/mathematics-13-02238-g001-550.jpg?1752149775",
+      "description": "Outdoor sweeping is a tedious and labor-intensive task essential for maintaining the cleanliness of public spaces such as gardens and parks. Robots have been developed to address the limitations of traditional methods. Coverage Path Planning (CPP) is a critical function for these robots. However, existing CPP methods often perform poorly in large environments, where such robots are typically deployed. This paper proposes a novel CPP framework for outdoor sweeping robots operating in expansive outdoor areas, defined as environments exceeding 1000 square meters in size. The framework begins by decomposing the environment into smaller sub-regions. The sequence in which these sub-regions are visited is then optimized by formulating the problem as a Travelling Salesman Problem (TSP), aiming to minimize travel distance. Once the visiting sequence is determined, a boustrophedon-based CPP is applied within each sub-region. We analyzed two decomposition strategies, Voronoi-based and grid-based, and evaluated three TSP optimization techniques: local search, record-to-record travel, and simulated annealing. This results in six possible combinations. Simulation results demonstrated that Voronoi-based decomposition achieves higher area coverage (average coverage of 95.6%) than grid-based decomposition (average coverage 52.8%). For Voronoi-based methods, local search yielded the shortest computation time, while simulated annealing achieved the lowest travel distance. We have also conducted hardware experiments to validate the real-world applicability of the proposed framework for efficient CPP in outdoor sweeping robots. The robot hardware experiment achieved 84% coverage in a 19 m × 17 m environment."
     },
     {
       "category": "Journal Articles",
@@ -205,7 +208,8 @@
       "metaDescription": "S. Pookkuttath, Gomez, Braulio Felix, and M. R. Elara,  Mathematics, vol. 13, no. 6, p. 913, 2025",
       "url": "https://www.mdpi.com/2227-7390/13/6/913",
       "isSearchLink": false,
-      "image": "https://pub.mdpi-res.com/mathematics/mathematics-13-00913/article_deploy/html/images/mathematics-13-00913-g001-550.jpg?1741598322"
+      "image": "https://pub.mdpi-res.com/mathematics/mathematics-13-00913/article_deploy/html/images/mathematics-13-00913-g001-550.jpg?1741598322",
+      "description": "Mobile robots are widely used, with research focusing on autonomy and functionality. However, long-term deployment requires their health and safety to be ensured. Terrain-induced vibrations accelerate wear. Hence, self-awareness and optimal path selection, avoiding such terrain anomalies, is essential. This study proposes an RL-based vibration-aware path planning framework, incorporating terrain roughness level classification, a vibration cost map, and an optimized vibration-aware path planning strategy. Terrain roughness is classified into four levels using IMU sensor data, achieving average prediction accuracy of 97% with a 1D CNN model. A vibration cost map is created by assigning vibration costs to each predicted class on a 2D occupancy grid, incorporating obstacles, vibration-prone areas, and the robot’s pose for navigation. An RL model is applied that adapts to changing terrain for path planning. The RL agent uses an MDP-based policy and a deep RL training model with PPO, taking the vibration cost map as input. Finally, the RL-based vibration-aware path planning framework is validated through virtual and real-world experiments using an in-house mobile robot. The proposed approach is compared with the A* path planning algorithm using a performance index that assesses movement and the terrain roughness level. The results show that it effectively avoids rough areas while maintaining the shortest distance."
     },
     {
       "category": "Journal Articles",
@@ -213,7 +217,8 @@
       "metaDescription": "J. H. Ong, A. A. Hayat, Gomez, Braulio Felix, M. R. Elara, and K. L. Wood,  Mathematics, vol. 12, no. 9, p. 1312, 2024",
       "url": "https://www.mdpi.com/2227-7390/12/9/1312",
       "isSearchLink": false,
-      "image": "https://pub.mdpi-res.com/mathematics/mathematics-12-01312/article_deploy/html/images/mathematics-12-01312-g001-550.jpg?1714381656"
+      "image": "https://pub.mdpi-res.com/mathematics/mathematics-12-01312/article_deploy/html/images/mathematics-12-01312-g001-550.jpg?1714381656",
+      "description": "This paper presents a comprehensive study on fall recognition and forecasting for reconfigurable stair-accessing robots by leveraging deep learning techniques. The proposed framework integrates machine learning algorithms and recurrent neural networks (RNNs), specifically Long Short-Term Memory (LSTM) and Bidirectional LSTM (BiLSTM), for fall detection of service robots on staircases. The reconfigurable stair-accessing robot sTetro serves as the platform, and the fall data required for training models are generated in a simulation environment. The two machine learning algorithms are compared and their effectiveness on the fall recognition task is reported. The results indicate that the BiLSTM model effectively classifies falls with a median categorical accuracy of 94.10% in simulation and 90.02% with limited experiments. Additionally, the BiLSTM model can be used for forecasting, which is practically valuable for making decisions well before the onset of a free fall. This study contributes insights into the design and implementation of fall detection systems for service robots used to navigate staircases through deep learning approaches. Our experimental and simulation data, along with the simulation steps, are available for reference and analysis via the shared link."
     },
     {
       "category": "Journal Articles",
@@ -221,7 +226,8 @@
       "metaDescription": "S. Pookkuttath, Gomez, Braulio Felix, M. R. Elara, and P. Thejus,  Expert Systems with Applications, vol. 222, p. 119 802, 2023",
       "url": "https://doi.org/10.1016/j.eswa.2023.119802",
       "isSearchLink": false,
-      "image": "https://ars.els-cdn.com/content/image/1-s2.0-S0957417423X00074-cov150h.gif"
+      "image": "https://ars.els-cdn.com/content/image/1-s2.0-S0957417423X00074-cov150h.gif",
+      "description": "Autonomous professional cleaning robots are ubiquitous today, coexist with humans, and the demand continues to improve hygiene and productivity, especially in large indoor workplaces. Hence, a proper maintenance strategy is essential to monitor the robot’s health, assuring flawless operation and safety. Manual supervision and periodic maintenance are adopted in general, which is challenging to detect failures in advance, resulting in higher maintenance costs and operational hazards. Anomalous vibration due to system degradation or environmental factors is an early symptom of failure or potential threats. Hence, predicting the sources of such abnormal vibration will help prompt maintenance action or set a hazard-free environment. However, such condition-monitoring research studies are not common for indoor cleaning robots. To fill this gap, we proposed an automated Condition Monitoring (CM) system using an optical flow-based vibration estimation. The proposed framework uses a monocular camera to estimate the robot’s vibration based on the optical flow vector displacement. A one-dimensional convolutional neural network (1D CNN) model is trained to classify the vibration levels into three categories: normal, warning, and alarm. Furthermore, a 2D CM map is generated by fusing the vibration levels with the robot’s pose, providing a visual representation of the robot’s health status in real-time. The proposed framework is validated through extensive experiments with a real cleaning robot in various indoor environments."
     },
     {
       "category": "Journal Articles",
@@ -229,7 +235,8 @@
       "metaDescription": "T. Pathmakumar, M. V. J. Muthugala, S. B. P. Samarakoon, Gómez, Braulio Félix, and M. R. Elara,  Sensors, vol. 22, no. 14, p. 5317, 2022",
       "url": "https://www.mdpi.com/1424-8220/22/14/5317",
       "isSearchLink": false,
-      "image": "https://pub.mdpi-res.com/sensors/sensors-22-05317/article_deploy/html/images/sensors-22-05317-g001-550.jpg?1658219845"
+      "image": "https://pub.mdpi-res.com/sensors/sensors-22-05317/article_deploy/html/images/sensors-22-05317-g001-550.jpg?1658219845",
+      "description": "Robot-aided cleaning auditing is pioneering research that uses autonomous robots to assess a region’s cleanliness level by analyzing the dirt samples collected from various locations. Since the dirt sample gathering process is more challenging, adapting a coverage planning strategy from a similar domain for cleaning is non-viable. Alternatively, a path planning approach to gathering dirt samples selectively at locations with a high likelihood of dirt accumulation is more feasible. This work presents a first-of-its-kind dirt sample gathering strategy for the cleaning auditing robots by combining the geometrical feature extraction and swarm algorithms. This combined approach generates an efficient optimal path covering all the identified dirt locations for efficient cleaning auditing. Besides being the foundational effort for cleaning audit, a path planning approach considering the geometric signatures that contribute to the dirt accumulation of a region has been proposed."
     },
     {
       "category": "Journal Articles",
@@ -237,7 +244,8 @@
       "metaDescription": "L. Yi, Félix Gómez, Braulio, B. Ramalingam, M. M. Rayguru, M. R. Elara, and A. A. Hayat,  Scientific reports, vol. 12, no. 1, p. 14 557, 2022",
       "url": "https://www.nature.com/articles/s41598-022-17858-w",
       "isSearchLink": false,
-      "image": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41598-022-17858-w/MediaObjects/41598_2022_17858_Fig1_HTML.png"
+      "image": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41598-022-17858-w/MediaObjects/41598_2022_17858_Fig1_HTML.png",
+      "description": "Ensuring the safety of autonomous robots operating in dynamic outdoor environments is paramount. This paper presents a self-reconfigurable robot vision pipeline designed to enhance adaptability and safety when navigating pavements with varying widths and surface conditions."
     },
     {
       "category": "Journal Articles",
@@ -245,7 +253,8 @@
       "metaDescription": "A. V. Le, B. Ramalingam, Gomez, Braulio Felix, R. E. Mohan, T. H. Q. Minh, and V. Sivanantham,  IEEE Access, vol. 9, pp. 41 407-41 416, 2021",
       "url": "https://ieeexplore.ieee.org/document/9366838",
       "isSearchLink": false,
-      "image": "https://ieeexplore.ieee.org/assets/img/ieee_logo_smedia_200X200.png"
+      "image": "https://ieeexplore.ieee.org/assets/img/ieee_logo_smedia_200X200.png",
+      "description": "Autonomous cleaning robots deployed in public spaces must operate efficiently while minimizing disruption to human activities. This paper proposes a social density monitoring system that enables a human support robot to perform selective cleaning based on crowd density."
     },
     {
       "category": "Journal Articles",
@@ -253,7 +262,8 @@
       "metaDescription": "L. M. J. Melvin, R. E. Mohan, A. Semwal, et al.,  Scientific reports, vol. 11, no. 1, p. 22 378, 2021",
       "url": "https://www.nature.com/articles/s41598-021-01170-0",
       "isSearchLink": false,
-      "image": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41598-021-01170-0/MediaObjects/41598_2021_1170_Fig1_HTML.png"
+      "image": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41598-021-01170-0/MediaObjects/41598_2021_1170_Fig1_HTML.png",
+      "description": "Drain inspection is a challenging task due to hazardous environments and confined spaces. This study introduces a framework for remote drain inspection utilizing a reconfigurable robot named Raptor, equipped with a convolutional neural network (CNN) for defect detection."
     },
     {
       "category": "Journal Articles",
@@ -261,7 +271,8 @@
       "metaDescription": "P. Palanisamy, R. E. Mohan, A. Semwal, et al.,  Sensors, vol. 21, no. 21, p. 7287, 2021",
       "url": "https://www.mdpi.com/1424-8220/21/21/7287",
       "isSearchLink": false,
-      "image": "https://pub.mdpi-res.com/sensors/sensors-21-07287/article_deploy/html/images/sensors-21-07287-g001-550.jpg?1636363484"
+      "image": "https://pub.mdpi-res.com/sensors/sensors-21-07287/article_deploy/html/images/sensors-21-07287-g001-550.jpg?1636363484",
+      "description": "Identifying structural defects in drainage systems is critical for infrastructure maintenance. This paper presents an AI-enabled approach using the reconfigurable robot Raptor and an Internet of Robotic Things (IoRT) framework to detect and map structural defects in drains."
     },
     {
       "category": "Journal Articles",
@@ -269,7 +280,8 @@
       "metaDescription": "T. Pathmakumar, M. R. Elara, Gómez, Braulio Félix, and B. Ramalingam,  Sensors, vol. 21, no. 24, p. 8331, 2021",
       "url": "https://www.mdpi.com/1424-8220/21/24/8331",
       "isSearchLink": false,
-      "image": "https://pub.mdpi-res.com/sensors/sensors-21-08331/article_deploy/html/images/sensors-21-08331-g001-550.jpg?1639974074"
+      "image": "https://pub.mdpi-res.com/sensors/sensors-21-08331/article_deploy/html/images/sensors-21-08331-g001-550.jpg?1639974074",
+      "description": "Cleaning is one of the fundamental tasks with prime importance given in our day-to-day life. Moreover, the importance of cleaning drives the research efforts towards bringing leading edge technologies, including robotics, into the cleaning domain. However, an effective method to assess the quality of cleaning is an equally important research problem to be addressed. The primary footstep towards addressing the fundamental question of “How clean is clean” is addressed using an autonomous cleaning-auditing robot that audits the cleanliness of a given area. This research work focuses on a novel reinforcement learning-based experience-driven dirt exploration strategy for a cleaning-auditing robot. The proposed approach uses proximal policy approximation (PPO) based on-policy learning method to generate waypoints and sampling decisions to explore the probable dirt accumulation regions in a given area. The policy network is trained in multiple environments with simulated dirt patterns. Experiment trials have been conducted to validate the trained policy in both simulated and real-world environments using an in-house developed cleaning audit robot called BELUGA."
     },
     {
       "category": "Journal Articles",
@@ -277,7 +289,8 @@
       "metaDescription": "B. Ramalingam, R. Elara Mohan, S. Balakrishnan, et al.,  Sensors, vol. 21, no. 18, p. 6279, 2021",
       "url": "https://www.mdpi.com/1424-8220/21/18/6279",
       "isSearchLink": false,
-      "image": "https://pub.mdpi-res.com/sensors/sensors-21-06279/article_deploy/html/images/sensors-21-06279-g001-550.jpg?1632367685"
+      "image": "https://pub.mdpi-res.com/sensors/sensors-21-06279/article_deploy/html/images/sensors-21-06279-g001-550.jpg?1632367685",
+      "description": "Staircase cleaning is a crucial and time-consuming task for maintenance of multistory apartments and commercial buildings. There are many commercially available autonomous cleaning robots in the market for building maintenance, but few of them are designed for staircase cleaning. A key challenge for automating staircase cleaning robots involves the design of Environmental Perception Systems (EPS), which assist the robot in determining and navigating staircases. This system also recognizes obstacles and debris for safe navigation and efficient cleaning while climbing the staircase. This work proposes an operational framework leveraging the vision based EPS for the modular re-configurable maintenance robot, called sTetro. The proposed system uses an SSD MobileNet real-time object detection model to recognize staircases, obstacles and debris. Furthermore, the model filters out false detection of staircases by fusion of depth information through the use"
     },
     {
       "category": "Journal Articles",
@@ -285,7 +298,8 @@
       "metaDescription": "B. Ramalingam, A. A. Hayat, M. R. Elara, et al.,  Sensors, vol. 21, no. 8, p. 2595, 2021",
       "url": "https://www.mdpi.com/1424-8220/21/8/2595",
       "isSearchLink": false,
-      "image": "https://pub.mdpi-res.com/sensors/sensors-21-02595/article_deploy/html/images/sensors-21-02595-g001-550.jpg?1628080968"
+      "image": "https://pub.mdpi-res.com/sensors/sensors-21-02595/article_deploy/html/images/sensors-21-02595-g001-550.jpg?1628080968",
+      "description": "Regular inspection of pavements is essential for maintaining road safety and infrastructure integrity. This paper proposes a deep learning-based pavement inspection system using a self-reconfigurable robot. The system utilizes advanced computer vision techniques to detect and classify pavement distress such as cracks and potholes."
     },
     {
       "category": "Journal Articles",
@@ -293,7 +307,8 @@
       "metaDescription": "B. Ramalingam, T. Tun, R. E. Mohan, et al.,  Sensors, vol. 21, no. 16, p. 5326, 2021",
       "url": "https://www.mdpi.com/1424-8220/21/16/5326",
       "isSearchLink": false,
-      "image": "https://pub.mdpi-res.com/sensors/sensors-21-05326/article_deploy/html/images/sensors-21-05326-g001-550.jpg?1629872765"
+      "image": "https://pub.mdpi-res.com/sensors/sensors-21-05326/article_deploy/html/images/sensors-21-05326-g001-550.jpg?1629872765",
+      "description": "Rodent infestation in false ceilings poses significant health and safety risks. This study presents an AI-enabled Internet of Robotic Things (IoRT) framework for monitoring rodent activity in such confined spaces. The system employs sensor networks and machine learning algorithms to detect and track rodent movements."
     },
     {
       "category": "Journal Articles",
@@ -301,7 +316,8 @@
       "metaDescription": "L. Yi, A. V. Le, B. Ramalingam, et al.,  Sensors, vol. 21, no. 5, p. 1745, 2021",
       "url": "https://www.mdpi.com/1424-8220/21/5/1745",
       "isSearchLink": false,
-      "image": "https://pub.mdpi-res.com/sensors/sensors-21-01745/article_deploy/html/images/sensors-21-01745-g001-550.jpg?1615202165"
+      "image": "https://pub.mdpi-res.com/sensors/sensors-21-01745/article_deploy/html/images/sensors-21-01745-g001-550.jpg?1615202165",
+      "description": "Autonomous pavement sweeping robots must navigate safely around pedestrians. This paper introduces a locomotion control strategy that incorporates pedestrian awareness using perception sensors. The reconfigurable robot adapts its path and behavior to ensure safe interaction with pedestrians during cleaning operations."
     },
     {
       "category": "Journal Articles",
@@ -309,7 +325,8 @@
       "metaDescription": "B. Ramalingam, R. E. Mohan, S. Pookkuttath, et al.,  Sensors, vol. 20, no. 18, p. 5280, 2020",
       "url": "https://www.mdpi.com/1424-8220/20/18/5280",
       "isSearchLink": false,
-      "image": "https://pub.mdpi-res.com/sensors/sensors-20-05280/article_deploy/html/images/sensors-20-05280-g001-550.jpg?1600418384"
+      "image": "https://pub.mdpi-res.com/sensors/sensors-20-05280/article_deploy/html/images/sensors-20-05280-g001-550.jpg?1600418384",
+      "description": "Monitoring insect traps is vital for pest control but labor-intensive. This research proposes a remote insect trap monitoring system that combines Deep Learning frameworks with IoT technology. The system automatically identifies and counts trapped insects, providing real-time data for effective pest management."
     },
     {
       "category": "Journal Articles",
@@ -317,7 +334,8 @@
       "metaDescription": "B. Ramalingam, J. Yin, M. Rajesh Elara, et al.,  Sensors, vol. 20, no. 12, p. 3543, 2020",
       "url": "https://www.mdpi.com/1424-8220/20/12/3543",
       "isSearchLink": false,
-      "image": "https://pub.mdpi-res.com/sensors/sensors-20-03543/article_deploy/html/images/sensors-20-03543-g001-550.jpg?1592973918"
+      "image": "https://pub.mdpi-res.com/sensors/sensors-20-03543/article_deploy/html/images/sensors-20-03543-g001-550.jpg?1592973918",
+      "description": "High-touch surfaces like door handles are hotspots for pathogen transmission. This paper presents a human support robot designed for the cleaning and maintenance of door handles. The robot utilizes a deep learning framework to detect handles and execute precise cleaning motions."
     },
     {
       "category": "Journal Articles",
@@ -325,7 +343,8 @@
       "metaDescription": "M. M. Rayguru, M. R. Elara, Gomez, Braulio Felix, and B. Ramalingam,  IEEE Access, vol. 8, pp. 155 352-155 361, 2020",
       "url": "https://ieeexplore.ieee.org/document/9153920",
       "isSearchLink": false,
-      "image": "https://ieeexplore.ieee.org/assets/img/ieee_logo_smedia_200X200.png"
+      "image": "https://ieeexplore.ieee.org/assets/img/ieee_logo_smedia_200X200.png",
+      "description": "Hybrid impedance control is crucial for robots interacting with unknown environments. This study proposes a time delay estimation-based adaptive sliding mode strategy to enhance the robustness and performance of hybrid impedance control, effectively handling uncertainties and disturbances."
     },
     {
       "category": "Journal Articles",
@@ -333,7 +352,8 @@
       "metaDescription": "T. W. Teng, P. Veerajagadheswar, B. Ramalingam, J. Yin, R. Elara Mohan, and Gómez, Braulio Félix,  Sensors, vol. 20, no. 11, p. 3298, 2020",
       "url": "https://www.mdpi.com/1424-8220/20/11/3298",
       "isSearchLink": false,
-      "image": "https://pub.mdpi-res.com/sensors/sensors-20-03298/article_deploy/html/images/sensors-20-03298-g001-550.jpg?1592186820"
+      "image": "https://pub.mdpi-res.com/sensors/sensors-20-03298/article_deploy/html/images/sensors-20-03298-g001-550.jpg?1592186820",
+      "description": "Wall following is a fundamental behavior for cleaning robots to ensure thorough coverage along boundaries. This paper presents a vision-based wall following framework using a Human Support Robot (HSR). The system utilizes visual feedback to maintain a consistent distance from walls during cleaning tasks."
     },
     {
       "category": "Conference Proceedings",

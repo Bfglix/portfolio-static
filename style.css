@@ -432,18 +432,25 @@ section.content-section {
     margin-bottom: 0.5rem;
 }
 
-/* Publication Card Special Styling */
-.pub-card {
-    display: flex;
-    gap: 1.5rem;
-    grid-column: span 2;
+/* Publication Grid Special Styling */
+.pub-grid {
+    grid-template-columns: repeat(2, 1fr);
 }
 
 @media (max-width: 768px) {
-    .pub-card {
-        flex-direction: column;
-        grid-column: span 1;
+    .pub-grid {
+        grid-template-columns: 1fr;
     }
+}
+
+/* Publication Card Special Styling */
+.pub-card {
+    /* display: flex; REMOVED old flex style, keep default flex-col from .card */
+}
+
+/* Ensure images in publication cards are consistent */
+.pub-card .card-image {
+    height: 200px;
 }
 
 .pub-content {
@@ -451,11 +458,13 @@ section.content-section {
 }
 
 .pub-meta {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
+    font-size: 0.95rem;
+    color: var(--text-primary);
     margin-top: 0.5rem;
     padding-top: 0.5rem;
     border-top: 1px solid var(--card-border);
+    display: block;
+    /* Ensure it takes space */
 }
 
 /* Skills Section */
