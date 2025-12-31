@@ -414,8 +414,10 @@ function createPublicationGrid(title, items) {
     section.className = 'content-section';
 
     const h2 = document.createElement('h2');
-    h2.className = 'section-header';
+    h2.className = 'section-header'; // Match other sections
     h2.textContent = title;
+    section.appendChild(h2); // Fix: Append title to section
+
     const grid = document.createElement('div');
     grid.className = 'cards-grid pub-grid'; // Use pub-grid for two-column layout
 
