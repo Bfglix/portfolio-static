@@ -54,7 +54,7 @@
         "Deployed the Smorphi Imaginary platform for an official contest in March 2023 at Singapore, supporting more than 200 participants simultaneously.",
         "Developed an embodied AI framework for the Dragonfly Mosquito Catcher robot, reducing the complexity curve of deployment tasks. Using Python, chat GPT 5 official API and ROS",
         "Engineered a Next.js and WebSockets platform for the Dragonfly robot, using Typescript, Javascript , HTML5, CSS and MongoDB for data storage that enables the robotic platform to perform scheduled path planning, video streaming, remote operation and reporting of every sensor used by the robot.",
-        "Led the publication of multiple papers in $Q_1$ journals related to AI, Machine Learning, Robotics, and Autonomy."
+        "Led the publication of multiple papers in Q1 journals related to AI, Machine Learning, Robotics, and Autonomy."
       ],
       "position": "PhD Candidate",
       "date": "2021 – 2025",
