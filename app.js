@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function renderPortfolio(data) {
     const container = document.getElementById('dynamic-content');
 
-    const sectionOrder = ['About Me', 'Experience', 'Education', 'Skills', 'Certifications', 'Research Publications'];
+    const sectionOrder = ['About Me', 'Research Publications', 'Experience', 'Education', 'Certifications'];
 
     sectionOrder.forEach(sectionName => {
         if (data[sectionName]) {
@@ -29,7 +29,7 @@ function renderPortfolio(data) {
             if (sectionName === 'Research Publications') {
                 sectionHTML = createPublicationGallery(sectionName, data[sectionName]);
             } else if (sectionName === 'About Me') {
-                sectionHTML = createAboutSection(sectionName, data[sectionName]);
+                sectionHTML = createAboutSection(sectionName, data[sectionName], data['Skills']);
             } else {
                 sectionHTML = createSection(sectionName, data[sectionName]);
             }
@@ -38,7 +38,7 @@ function renderPortfolio(data) {
     });
 }
 
-function createAboutSection(title, data) {
+function createAboutSection(title, data, skillsData) {
     const section = document.createElement('section');
     section.id = title.replace(/\s+/g, '');
     section.className = 'content-section about-section';
@@ -52,12 +52,6 @@ function createAboutSection(title, data) {
     contentDiv.className = 'about-content';
 
     // Image
-    // Use a placeholder if parsing failed or just placeholder name
-    const imgSrc = 'https://via.placeholder.com/150'; // Default
-    // If data.image from parser is 'placeholder_profile.jpg', we might want to map it or just use the online placeholder
-
-    // We'll stick to a nice online placeholder for now or checking if file exists
-    // The user said "placeholder for an image".
     const img = document.createElement('img');
     img.src = './public/profile_pic.jpeg'; // Professional generic profile
     img.className = 'about-image';
@@ -76,8 +70,93 @@ function createAboutSection(title, data) {
     contentDiv.appendChild(textDiv);
 
     section.appendChild(contentDiv);
+
+    // Skills Injection
+    // Skills Injection
+    if (skillsData) {
+        const skillContainer = document.createElement('div');
+        skillContainer.className = 'skills-container';
+        // Add some margin top to separate from About text
+        skillContainer.style.marginTop = '3rem';
+
+        // Filter data
+        const languageData = skillsData.filter(cat => cat.category === 'Languages');
+        const otherSkillsData = skillsData.filter(cat => cat.category !== 'Languages');
+
+        // Function to create a skill card
+        const createSkillCard = (title, items) => {
+            const catDiv = document.createElement('div');
+            catDiv.className = 'skill-category';
+            catDiv.innerHTML = `<h3 class="skill-cat-title">${title}</h3>`;
+
+            // If it's the general 'Skills' card, we want to group by sub-categories
+            if (title === 'Skills') {
+                const groupsContainer = document.createElement('div');
+                groupsContainer.style.display = 'flex';
+                groupsContainer.style.flexDirection = 'column';
+                groupsContainer.style.gap = '1.5rem';
+
+                items.forEach(category => {
+                    const subGroup = document.createElement('div');
+
+                    const subTitle = document.createElement('h4');
+                    subTitle.textContent = category.category;
+                    subTitle.style.color = 'var(--text-secondary)';
+                    subTitle.style.marginBottom = '0.5rem';
+                    subTitle.style.fontSize = '1.1rem'; // Slightly smaller than card title
+                    subGroup.appendChild(subTitle);
+
+                    const tags = document.createElement('div');
+                    tags.className = 'skill-tags';
+
+                    category.values.forEach(val => {
+                        const span = document.createElement('span');
+                        span.className = 'skill-tag';
+                        span.textContent = val;
+                        tags.appendChild(span);
+                    });
+
+                    subGroup.appendChild(tags);
+                    groupsContainer.appendChild(subGroup);
+                });
+                catDiv.appendChild(groupsContainer);
+            }
+            else {
+                // Formatting for simple lists like Languages (no subheaders needed if we don't want them, but consistent is better - let's keep it simple for now as it worked for languages)
+                // Actually languages is just one category usually.
+                const tags = document.createElement('div');
+                tags.className = 'skill-tags';
+
+                items.forEach(category => {
+                    category.values.forEach(val => {
+                        const span = document.createElement('span');
+                        span.className = 'skill-tag';
+                        span.textContent = val;
+                        tags.appendChild(span);
+                    });
+                });
+                catDiv.appendChild(tags);
+            }
+            return catDiv;
+        };
+
+        // 1. General Skills Card
+        if (otherSkillsData.length > 0) {
+            skillContainer.appendChild(createSkillCard('Skills', otherSkillsData));
+        }
+
+        // 2. Languages Card
+        if (languageData.length > 0) {
+            skillContainer.appendChild(createSkillCard('Languages', languageData));
+        }
+
+        section.appendChild(skillContainer);
+    }
+
     return section;
 }
+
+
 
 function createPublicationGallery(title, items) {
     const section = document.createElement('section');
@@ -260,7 +339,6 @@ function createPublicationGallery(title, items) {
     return section;
 }
 
-
 function createSection(title, items) {
     const section = document.createElement('section');
     section.id = title.replace(/\s+/g, '');
@@ -270,29 +348,6 @@ function createSection(title, items) {
     h2.className = 'section-header';
     h2.textContent = title;
     section.appendChild(h2);
-
-    // Skills Special Handling
-    if (title === 'Skills') {
-        const skillContainer = document.createElement('div');
-        skillContainer.className = 'skills-container';
-        items.forEach(category => {
-            const catDiv = document.createElement('div');
-            catDiv.className = 'skill-category';
-            catDiv.innerHTML = `<h3 class="skill-cat-title">${category.category}</h3>`;
-            const tags = document.createElement('div');
-            tags.className = 'skill-tags';
-            category.values.forEach(val => {
-                const span = document.createElement('span');
-                span.className = 'skill-tag';
-                span.textContent = val;
-                tags.appendChild(span);
-            });
-            catDiv.appendChild(tags);
-            skillContainer.appendChild(catDiv);
-        });
-        section.appendChild(skillContainer);
-        return section;
-    }
 
     // Certifications Special Handling (List with Icons)
     if (title === 'Certifications') {
@@ -394,3 +449,4 @@ function createSection(title, items) {
     section.appendChild(grid);
     return section;
 }
+
