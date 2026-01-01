@@ -34,7 +34,8 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 100%;
+    /* Fix: Use % to avoid scrollbar width overlap */
     height: 100vh;
     background: radial-gradient(circle at 10% 10%, rgba(0, 243, 255, 0.08) 0%, transparent 40%),
         radial-gradient(circle at 90% 90%, rgba(0, 102, 255, 0.08) 0%, transparent 40%);
@@ -136,6 +137,24 @@ a:hover {
 .nav-links a:hover {
     color: var(--accent);
     text-shadow: 0 0 10px var(--accent-glow);
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+    }
+
+    .nav-links {
+        gap: 0.8rem;
+        flex-wrap: wrap;
+        /* Allow items to wrap */
+        justify-content: center;
+        /* Center items when wrapped */
+    }
+
+    .nav-links a {
+        font-size: 0.8rem;
+    }
 }
 
 /* Hero Section */
@@ -497,9 +516,7 @@ section.content-section {
 }
 
 /* Publication Card Special Styling */
-.pub-card {
-    /* display: flex; REMOVED old flex style, keep default flex-col from .card */
-}
+/* .pub-card removed empty rule */
 
 /* Ensure images in publication cards are consistent */
 .pub-content {
@@ -601,6 +618,59 @@ section.content-section {
     font-size: 0.85rem;
     margin-bottom: 1rem;
     font-weight: 500;
+}
+
+/* Mobile Alignment Fixes */
+@media (max-width: 768px) {
+    .content-section {
+        text-align: center;
+        padding: 4rem 1.5rem;
+        /* Reduce padding slightly */
+    }
+
+    .section-header {
+        margin-bottom: 2rem;
+    }
+
+    .section-header::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .timeline-container {
+        border-left: none;
+        /* Remove vertical line on mobile */
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    .timeline-item {
+        padding-left: 0;
+        margin-bottom: 2rem;
+    }
+
+    .timeline-dot {
+        display: none;
+        /* Hide dots on mobile */
+    }
+
+    .timeline-content {
+        padding-right: 1.5rem;
+        /* Reset padding reserved for logo */
+        text-align: center;
+        /* Center card content */
+    }
+
+    .timeline-logo {
+        position: relative;
+        top: auto;
+        right: auto;
+        display: block;
+        margin: 0 auto 1.5rem auto;
+        /* Center logo above content */
+        max-width: 150px;
+        max-height: 100px;
+    }
 }
 
 /* Compact Citation Card (About Me) */
